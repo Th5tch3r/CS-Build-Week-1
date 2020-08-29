@@ -20,7 +20,7 @@ class LifeCanvas extends Component {
 
     draw() {
         const ctx = this.refs.canvas.getContext('2d');
-        ctx.strokeStyle = '#414a4c';
+        ctx.strokeStyle = '#1e2476';
         for (let i=0; i<=375; i+=15) {
             for (let j=0; j<=375; j+=15) {
                 ctx.moveTo (i, 0);
@@ -53,7 +53,7 @@ class LifeCanvas extends Component {
 
     fillSquares = () => {
         const ctx = this.refs.canvas.getContext ('2d');
-        ctx.fillStyle = '#414a4c';
+        ctx.fillStyle = '#060707';
         for (let i=0; i<this.life.grid.length; i++) {
             for (let j=0; j<this.life.grid.length; j++) {
                 if (this.life.grid[i][j]) {
@@ -113,6 +113,18 @@ class LifeCanvas extends Component {
                 case 'random':
                     this.life.createRandomizedGrid();
                     break;
+                case 'rPentomino':
+                    this.life.createRPentomino();
+                    break;
+                case 'Glider':
+                    this.life.createGlider();
+                    break;
+                case 'Explorer':
+                    this.life.createSmallExplorer();
+                    break;
+                case "10CellRow":
+                    this.life.create10CellRow();
+                    break;
                 default:
                     this.life.createBlankGrid();
             }
@@ -155,11 +167,16 @@ class LifeCanvas extends Component {
                         Clear
                     </button>
                 </div>
-
+                <h4> Pick A Template: 
                 <select onChange={this.selectHandler} defaultValue="None">
                         <option value="none">None</option>
                         <option value="random">Random</option>
+                        <option value="rPentomino">R-pentomino</option>
+                        <option value="Glider">Glider</option>
+                        <option value="Explorer">Explorer</option>
+                        <option value="10CellRow">10 Cells Row</option>
                 </select>
+                </h4>
 
 
             </div>

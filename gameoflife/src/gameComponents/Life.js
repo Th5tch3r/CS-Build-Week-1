@@ -1,7 +1,9 @@
 const Life = class {
+
     constructor() {
         this.grid = [];
     }
+
     runIteration(board) {
         const newBoard = [];
         const length = board.length;
@@ -61,8 +63,41 @@ const Life = class {
         }
     }
 
+    createRPentomino() {
+        this.createBlankGrid();
+        this.grid[19][11] = 1;
+        this.grid[19][12] = 1;
+        this.grid[20][11] = 1;
+        this.grid[18][12] = 1;
+        this.grid[19][13] = 1;
+    }
 
+    createGlider() {
+        this.createBlankGrid();
+        this.grid[2][1] = 1;
+        this.grid[3][2] = 1;
+        this.grid[3][3] = 1;
+        this.grid[2][3] = 1;
+        this.grid[1][3] = 1; 
+    }
 
+    createSmallExplorer() {
+        this.createBlankGrid();
+        this.grid[11][10] = 1;
+        this.grid[11][11] = 1;
+        this.grid[10][11] = 1;
+        this.grid[12][11] = 1;
+        this.grid[10][12] = 1;
+        this.grid[12][12] = 1;
+        this.grid[11][13] = 1;
+    }
+
+    create10CellRow() {
+        this.createBlankGrid();
+        for (let i=8; i<18; i++) {
+            this.grid[i][12] = 1;
+        }
+    }
 
 
 }
