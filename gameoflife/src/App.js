@@ -2,23 +2,14 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import LifeCanvas from "./gameComponents/LifeCanvas.js"
+
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Conway's Game of Life (Thatcher Phan)</h1>
+      <LifeCanvas/>
+      <h3>Click <a href="https://www.conwaylife.com/wiki/Conway%27s_Game_of_Life">here</a> to learn more about the rules of this game. </h3>
     </div>
   );
 }
